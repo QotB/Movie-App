@@ -1,0 +1,8 @@
+<div class="body">
+    <div class="row" style="background-color: black;">
+        <app-movie-item class="col-4 col-sm-4 col-md-4 col-lg-4"
+        *ngFor="let movieEl of movies; let i = index"
+        [movie]="movieEl"
+        [index]="i"></app-movie-item>
+     </div>
+</div>

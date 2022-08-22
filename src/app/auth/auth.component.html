@@ -1,0 +1,170 @@
+<div class="div">
+  <br><br><br><br><br><br>
+ <div class="row">
+    <div class="col-xs-12 col-md-6 col-md-offset-3">
+      <div class="alert alert-danger" *ngIf="log === 0">
+        <p>
+            {{ error }}
+        </p>
+      </div>
+      <form #authForm="ngForm" (ngSubmit)="onSubmit(authForm)">
+        <div class="form-group">
+          <label for="email" style="color: white;">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            class="form-control"
+            ngModel
+            name="email"
+            required
+            email
+          />
+        </div>
+        <div class="form-group">
+          <label for="password" style="color: white;">Password</label>
+          <input
+            type="password"
+            id="password"
+            class="form-control"
+            ngModel
+            name="password"
+            required
+            minlength="6"
+          />
+        </div>
+        <div>
+          <button
+            class="btn btn-primary"
+            type="submit"
+            [disabled]="!authForm.valid"
+          >
+            {{ isLoginMode ? 'Login' : 'Sign Up' }}
+          </button>
+          |
+          <button class="btn btn-primary" (click)="onSwitchMode()" type="button">
+            Switch to {{ isLoginMode ? 'Sign Up' : 'Login' }}
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <html lang="en">
+      <!-- Design by foolishdeveloper.com -->
+    <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+      <title>Document</title>
+      <style media="screen">
+        body{
+          background: #000000
+        }
+        .slider {
+        position: relative;
+        width: 350px;
+        margin: 50px auto;
+        perspective: 1000px;
+        padding-top: 120px;
+        }
+        .rotator {
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        width: 55%;
+        height: 150px;
+        transform-style: preserve-3d;
+        animation: roter 29s linear infinite;
+        }
+        .rotator:hover {
+        animation-play-state: paused;
+        }
+        @keyframes roter {
+        from {
+        transform: rotateY(0deg);
+        }
+        to {
+        transform: rotateY(360deg);
+        }
+        }
+        .items {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        overflow: hidden;
+        border: 2px solid white;
+        }
+        .items:hover img {
+        transform: scale(1.1);
+        }
+        .items img {
+        height: 100%;
+        width: 100%;
+        transition: all 3s ease;
+        }
+        .items:first-child {
+        transform: rotateY(calc(40deg * 1)) translateZ(300px);
+        }
+        .items:nth-child(2) {
+        transform: rotateY(calc(40deg * 2)) translateZ(300px);
+        }
+        .items:nth-child(3) {
+        transform: rotateY(calc(40deg * 3)) translateZ(300px);
+        }
+        .items:nth-child(4) {
+        transform: rotateY(calc(40deg * 4)) translateZ(300px);
+        }
+        .items:nth-child(5) {
+        transform: rotateY(calc(40deg * 5)) translateZ(300px);
+        }
+        .items:nth-child(6) {
+        transform: rotateY(calc(40deg * 6)) translateZ(300px);
+        }
+        .items:nth-child(7) {
+        transform: rotateY(calc(40deg * 7)) translateZ(300px);
+        }
+        .items:nth-child(8) {
+        transform: rotateY(calc(40deg * 8)) translateZ(300px);
+        }
+        .items:nth-child(9) {
+        transform: rotateY(calc(40deg * 9)) translateZ(300px);
+        }
+
+      </style>
+    </head>
+    <body>
+      <div class="slider">
+        <div class="rotator">
+            <div class="items">
+              <img src="https://www.themoviedb.org/t/p/original/g2V6uVSK6MVmI315h0rfWSaMoxP.jpg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://ruhsmedia.com/wp-content/uploads/2022/01/spiderman-607x900.jpg" />
+            </div>
+            <div class="items">
+              <img src="https://www.scifi-movies.com/images/contenu/data/0002841/affiche-jurassic-world-le-monde-d-apres-jurassic-world-dominion-2022-4.jpg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://www.filmjabber.com/movie-poster-thumbs/rumble-movie-poster-6499.jpg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://i.pinimg.com/736x/69/14/54/6914544922b8f8837e693ccb5d2609c9.jpg" />
+            </div>
+            <div class="items">
+              <img src="https://www.scifi-movies.com/images/contenu/data/0004927/affiche-thor-love-and-thunder-2021-1.jpg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://comic-cons.xyz/wp-content/uploads/marvel-cinematic-universe-black-widow-movie-poster.jpg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://s3.amazonaws.com/static.rogerebert.com/uploads/movie/movie_poster/interceptor-2022/large_interceptor-movie-poster-2022.jpeg" alt="items photo" />
+            </div>
+            <div class="items">
+              <img src="https://www.themoviedb.org/t/p/w220_and_h330_face/gmU7P3FzGFsl2wiSDhx9znZCNub.jpg" alt="items photo" />
+            </div>
+        </div>
+      </div>
+    </body>
+    </html>
+</div>

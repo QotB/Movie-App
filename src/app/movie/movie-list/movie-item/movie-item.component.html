@@ -1,0 +1,19 @@
+<body>
+	<div class="hero-container">
+		<div class="main-container">
+			<div class="poster-container">
+				<a href="#" [routerLink]="[index]"><img src = "https://image.tmdb.org/t/p/original/{{movie.poster_path}}" class="poster" /></a>
+			</div>
+			<div class="ticket-container">
+				<div class="ticket__content">
+					<h4 class="ticket__movie-title"> {{ movie.title }}</h4>
+					<p class="ticket__movie-slogan">
+						{{ movie.overview }}
+					</p>
+					<a class="ticket__summary-btn" style="cursor: pointer;"
+					[routerLink]="[index]" >Summary</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
